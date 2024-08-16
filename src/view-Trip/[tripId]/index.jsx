@@ -34,7 +34,7 @@ const ViewTrip = () => {
   return (
     <>
       <Header />
-      <div className="p-10 md:px-20 lg:px-44 xl:px-56 border">
+      <div className="p-5 md:px-20 lg:px-44 xl:px-56 border">
         <InfoSection trip={trip} />
         <Hotels trip={trip} />
         <ToVisit trip={trip} />

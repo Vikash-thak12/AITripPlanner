@@ -137,14 +137,14 @@ const CreateTrip = () => {
 
           <div>
             <h2 className="text-xl my-3 font-medium">What is your Budget?</h2>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               {budgetOptions.map((item, index) => (
                 <div key={index}
                   onClick={() => handleInputChange("Budget", item.title)}
                   className={`border px-3 py-2 rounded-lg hover:shadow-lg cursor-pointer ${formdata?.Budget == item.title && "border-black shadow-lg"}`}>
-                  <h2 className="text-3xl py-2">{item.icon}</h2>
-                  <h2 className="font-bold text-lg">{item.title}</h2>
-                  <h2 className="line-clamp-2 text-gray-500">{item.desc}</h2>
+                  <h2 className="text-3xl text-center">{item.icon}</h2>
+                  <h2 className="font-bold text-lg text-center">{item.title}</h2>
+                  <h2 className="line-clamp-2 text-gray-500 text-center">{item.desc}</h2>
                 </div>
               ))}
             </div>
@@ -152,14 +152,14 @@ const CreateTrip = () => {
 
           <div>
             <h2 className="text-xl my-3 font-medium">Who do you plan on travelling with on your next Adventure?</h2>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               {tripDestinations.map((item, index) => (
                 <div key={index}
                   onClick={() => handleInputChange("People", item.people)}
                   className={`border px-3 py-2 rounded-lg hover:shadow-lg cursor-pointer ${formdata?.People == item.people && "border-black shadow-lg"}`}>
-                  <h2 className="text-3xl py-2">{item.icon}</h2>
-                  <h2 className="font-bold text-lg">{item.title}</h2>
-                  <h2 className="line-clamp-2 text-gray-500">{item.desc}</h2>
+                  <h2 className="text-3xl py-2 text-center">{item.icon}</h2>
+                  <h2 className="font-bold text-lg text-center">{item.title}</h2>
+                  <h2 className="line-clamp-2 text-gray-500 text-center">{item.desc}</h2>
                 </div>
               ))}
             </div>

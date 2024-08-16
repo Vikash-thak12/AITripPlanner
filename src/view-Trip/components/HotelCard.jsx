@@ -26,12 +26,12 @@ const HotelCard = ({ hotel }) => {
     return (
         <Link to={"https://www.google.com/maps/search/?api=1&query=" + hotel?.name + "," + hotel?.address} target="_blank">
             <div className="hover:scale-105 transition-all cursor-pointer shadow-md shadow-slate-400 rounded-md">
-                <img src={photoUrl} alt="recommend" className="rounded-lg w-full h-[110px] xl:h-[180px] object-cover" />
+                <img src={photoUrl} alt="recommend" className="rounded-lg w-full h-[150px] xl:h-[180px] object-cover" />
                 <div className="flex flex-col gap-2 px-2 py-1">
                     <h2 className="line-clamp-1 font-medium">{hotel?.name}</h2>
                     {/* <h2 className="line-clamp-2">{hotel.description}</h2> */}
                     <h2 className="line-clamp-1 text-xs text-gray-500">📍{hotel?.address}</h2>
-                    <h2 className="text-xs xl:text-sm font-semibold">💰 {hotel?.price}</h2>
+                    <h2 className="text-xs xl:text-sm font-semibold line-clamp-1">💰 {hotel?.price}</h2>
                     <h2 className="text-xs xl:text-sm font-semibold">⭐ {hotel?.rating}</h2>
                 </div>
             </div>

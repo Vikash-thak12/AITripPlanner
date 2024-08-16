@@ -1,6 +1,4 @@
-// import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import { Button } from "../ui/button";
 
 import {
     Popover,
@@ -12,6 +10,12 @@ import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import DialogBtn from "@/create_trips/Dialog";
 import axios from "axios";
 import { Button } from "../ui/button";
+
+import Lottie from "lottie-react";
+import animationData from '../../assets/relax.json'
+
+// import beach from "./beach.json"
+// import { lottie} from 'react-lottie'
 
 
 const Header = () => {
@@ -37,7 +41,7 @@ const Header = () => {
                 Accept: 'Application/json',
             },
         }).then((res) => {
-            console.log(res);
+            // console.log(res);
             localStorage.setItem('user', JSON.stringify(res.data));
             setOpenDialog(false);
         });
@@ -48,17 +52,18 @@ const Header = () => {
     }, []);
 
     return (
-        <div className="flex justify-between items-center p-4 md:p-5 shadow-md">
+        <div className="flex justify-between items-center px-3 md:px-5 md:py-2 shadow-md">
             <div>
-                <img onClick={() => navigate("/")} src="/logo.svg" alt="logo" className="cursor-pointer h-8 md:h-10" />
+                <Lottie animationData={animationData} className="cursor-pointer h-20" onClick={() => navigate("/")} />
+                {/* <img onClick={() => navigate("/")} src="/suitcase.png" alt="logo" className="cursor-pointer w-full h-10 md:h-20" /> */}
             </div>
             <div>
                 {user ? (
                     <div className="flex items-center gap-3 md:gap-5">
-                        <Button onClick={() => navigate("/create-trip")} variant="outline" className="rounded-full text-sm md:text-base px-3 md:px-5">
-                           + Create Trip
+                        <Button onClick={() => navigate("/create-trip")} className="rounded-full font-semibold text-xs md:text-base px-2 md:px-5">
+                            Create Trip
                         </Button>
-                        <Button onClick={() => navigate("/my-trips")} variant="outline" className="rounded-full text-sm md:text-base px-3 md:px-5">
+                        <Button onClick={() => navigate("/my-trips")} className="rounded-full font-semibold text-xs md:text-base px-3 md:px-5">
                             My Trips
                         </Button>
                         <Popover>
